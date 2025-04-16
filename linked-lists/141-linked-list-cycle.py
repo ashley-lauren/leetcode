@@ -21,3 +21,28 @@ class Solution(object):
             curr_node = curr_node.next
         
         return False
+    
+class AltSolution(object):
+    def hasCycle(self, head):
+        """
+        Solution utilizes tortoise and hare algorithm for better memory complexity
+        :type head: ListNode
+        :rtype: bool
+        """
+
+        slow = head
+        fast = head
+        
+        while fast != None:
+            slow = slow.next
+            fast = fast.next
+            
+            if (fast == None):
+                return False
+                
+            fast = fast.next
+            
+            if (slow == fast):
+                return True
+                
+        return False
