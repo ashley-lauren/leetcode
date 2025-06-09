@@ -4,7 +4,6 @@ class Solution:
         res = 0
 
         while l <= r:
-            print(f"l=${l}, r=${r}")
             m = (l + r) // 2
             if m ** 2 == x:
                 return m
